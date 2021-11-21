@@ -30,13 +30,13 @@ pipeline {
         stage(&apos;Checkout&apos;) {
             steps {
                 dir(&quot;UI&quot;) {
-                    git &apos;https://QualiLabs@dev.azure.com/QualiLabs/Project%20Pivot/_git/Project%20Pivot/src/promotions-manager/promotions-manager-ui&apos;
+                    git &apos;https://QualiLabs@dev.azure.com/QualiLabs/Promotions%20Manager/_git/promotions-manager-ui&apos;
                 }
                 dir(&quot;API&quot;) {
-                    git &apos;https://QualiLabs@dev.azure.com/QualiLabs/Project%20Pivot/_git/Project%20Pivot/src/promotions-manager/promotions-manager-api&apos;
+                    git &apos;https://QualiLabs@dev.azure.com/QualiLabs/Promotions%20Manager/_git/promotions-manager-api&apos;
                 }
                 dir(&quot;Testing&quot;) {
-                    git &apos;https://QualiLabs@dev.azure.com/QualiLabs/Project%20Pivot/_git/Testing&apos;
+                    git &apos;https://QualiLabs@dev.azure.com/QualiLabs/Promotions%20Manager/_git/Testing&apos;
                 }
             }
         }
@@ -98,7 +98,7 @@ pipeline {
                         //TODO replace latest with current artifact from Build stage 
                         newSandboxData = colony.blueprint(
                             spaceName,                           // space name
-                            &apos;Quality-Assurance&apos;,               // blueprint name
+                            &apos;promotions-manager-all-aws&apos;,               // blueprint name
                             &apos;pm-test-sandbox-&apos; + env.BUILD_NUMBER,  // sandbox name
                             &apos;PT2H&apos;,                                 // sandbox duration according to ISO 8601 duration
                             [&apos;promotions-manager-ui&apos;: &apos;promotions-manager/latest/promotions-manager-ui.master.tar.gz&apos;,        // artifacts
