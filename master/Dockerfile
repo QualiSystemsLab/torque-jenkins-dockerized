@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.289.2-lts
+FROM jenkins/jenkins:lts-jdk11
 
 ENV JENKINS_USER admin
 ENV JENKINS_PASS %PASSWORD%
