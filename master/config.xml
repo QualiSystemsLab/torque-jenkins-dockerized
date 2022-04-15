@@ -96,7 +96,7 @@ pipeline {
                     try {
                         //Start Sandbox
                         //TODO replace latest with current artifact from Build stage 
-                        newSandboxData = colony.blueprint(
+                        newSandboxData = torque.blueprint(
                             spaceName,                           // space name
                             &apos;promotions-manager-all-aws&apos;,               // blueprint name
                             &apos;pm-test-sandbox-&apos; + env.BUILD_NUMBER,  // sandbox name
@@ -116,7 +116,7 @@ pipeline {
                     }
                     catch(Exception e) {
                         if (newSandboxData != null) {
-                            colony.endSandbox(spaceName, newSandboxData.id)
+                            torque.endSandbox(spaceName, newSandboxData.id)
                         }
                         print e.getClass().getName()
                         print e.message
@@ -124,7 +124,7 @@ pipeline {
                     }
                     finally {
                         if (newSandboxData != null) {
-                            colony.endSandbox(spaceName, newSandboxData.id)
+                            torque.endSandbox(spaceName, newSandboxData.id)
                         }
                     }
                 }                
