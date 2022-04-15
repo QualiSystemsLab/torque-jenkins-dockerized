@@ -2,6 +2,6 @@ jenkins:
   systemMessage: "Jenkins Test Torque Installation"
 
 unclassified:
-  colony:
+  torque:
     address: "https://app.qtorque.io"
     token: "%TOKEN%"
