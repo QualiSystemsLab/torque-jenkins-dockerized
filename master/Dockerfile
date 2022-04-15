@@ -14,8 +14,8 @@ COPY default-user.groovy /usr/share/jenkins/ref/init.groovy.d/
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/plugins.txt
 
-# Pre-install colony plugin
-COPY colony.hpi /usr/share/jenkins/ref/plugins/colony.hpi
+# Pre-install the torque plugin
+COPY torque.hpi /usr/share/jenkins/ref/plugins/torque.hpi
 
 # Create job
 RUN mkdir -p /usr/share/jenkins/ref/jobs/demo/
